@@ -1,10 +1,10 @@
-# Import packages
+#Import packages
 
 import yfinance as yf
 import streamlit as st 
 import pandas as pd
 
-# Add header and text
+#Add header and text
 st.write("""
 # Simple Stock Price App
 
@@ -12,16 +12,16 @@ Show are the stock closing price and volume of Google!
 
 """)
 
-# Define the ticker symbol
+#Define the ticker symbol
 tickerSymbol = 'GOOGL'
 
-# Get data on this ticker
+#Get data on this ticker
 tickerData = yf.Ticker(tickerSymbol)
 
-# Get historical prices for this ticker
+#Get historical prices for this ticker
 tickerDF = tickerData.history(period='1d', start='2010-5-31' end='2020-5-31')
 
-# Open high low close volume dividends 
+#Open high low close volume dividends 
 
 st.line_chart(tickerDf.Close)
 st.line_chart(tickerDf.Volume)
